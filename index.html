@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Шахматные Варианты — Хаб</title>
+  <link rel="stylesheet" href="style.css?v=18">
+</head>
+<body>
+  <!-- ============ ЭКРАН ЗАГРУЗКИ ============ -->
+  <div id="loading">
+    <div class="spinner">♞</div>
+    <p>Загружаем фигуры…</p>
+  </div>
+
+  <!-- ============ ХАБ ============ -->
+  <section id="hub">
+    <header class="hub-header">
+      <h1>♞ Шахматные Варианты</h1>
+      <p>Хаб необычных шахмат. Выбери вариант и играй — с компьютером или вдвоём на одном экране.</p>
+    </header>
+    <div id="variant-cards" class="cards"></div>
+  </section>
+
+  <!-- ============ ИГРА ============ -->
+  <section id="game" class="hidden">
+    <div class="game-top">
+      <button id="btn-back" class="btn">← Все варианты</button>
+      <h2 id="game-title"></h2>
+      <div class="top-actions">
+        <button id="btn-undo" class="btn">↩ Отменить ход</button>
+        <button id="btn-restart" class="btn">Заново</button>
+      </div>
+    </div>
+    <div class="game-body">
+      <div class="board-wrap">
+        <div class="board-row">
+          <div id="evalbar"><div id="evalfill"></div><span id="evaltext">0.0</span></div>
+          <div id="board"></div>
+        </div>
+        <div id="promo-overlay" class="hidden">
+          <div class="promo-box">
+            <p>Во что превратить пешку?</p>
+            <div id="promo-choices"></div>
+          </div>
+        </div>
+      </div>
+      <aside class="side">
+        <div id="status" class="status"></div>
+        <div id="variant-info" class="variant-info"></div>
+        <div class="mode-switch">
+          <button id="mode-ai" class="btn small active">Против компьютера</button>
+          <button id="mode-local" class="btn small">Вдвоём</button>
+        </div>
+        <ol id="movelist" class="movelist"></ol>
+      </aside>
+    </div>
+  </section>
+
+  <script src="engine.js?v=18"></script>
+  <script src="app.js?v=18"></script>
+</body>
+</html>
